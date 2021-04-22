@@ -22,4 +22,4 @@
 
 
 
-<img src="/img/Automation.png" width="500" height="300">
+<img src="/img/livingDoc.png" width="500" height="300">
