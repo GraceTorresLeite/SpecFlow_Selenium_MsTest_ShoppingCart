@@ -17,6 +17,7 @@ namespace ShoppingCart.Hooks
         {
             ChromeOptions chromeOptions = new ChromeOptions();
 
+           // chromeOptions.AddArguments("--start-maximized");
             chromeOptions.AddArguments("--disable-notifications");
             chromeOptions.AddExcludedArgument("disable-popup-blocking");
 

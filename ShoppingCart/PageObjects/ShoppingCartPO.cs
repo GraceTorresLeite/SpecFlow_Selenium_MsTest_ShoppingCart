@@ -106,6 +106,7 @@ namespace ShoppingCart.PageObjects
         public void ToBtnConfirmOrder()
         {
             driver.FindElement(byConfirmOrderBtn).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
         }
 
         public bool IsPagetDisplayed()

@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using ShoppingCart.Hooks;
 using ShoppingCart.PageObjects;
+using ShoppingCart.Reports.ScreenShot;
 using System;
 using TechTalk.SpecFlow;
 
@@ -13,7 +14,7 @@ namespace ShoppingCart.Steps
     {
         private readonly ScenarioContext _scenarioContext;
         private IWebDriver _driver;
-        private ScreenshotImageFormat png;
+        private Screenshots screenshots;
         private HomePO homePO;
         private ShoppingCartPO shoppingCartPO;
         private CreateAccountPO createAccountPO;
@@ -31,10 +32,7 @@ namespace ShoppingCart.Steps
 
             createAccountPO = new CreateAccountPO(_driver);
 
-            if (_scenarioContext.TestError != null)
-            {
-                png = ScreenshotImageFormat.Png;
-            }
+            screenshots = new Screenshots(_driver);
         }
 
         [Given(@"I added the product to the cart")]
@@ -80,9 +78,15 @@ namespace ShoppingCart.Steps
         [Then(@"the purchase order will be generated")]
         public void ThenThePurchaseOrderWillBeGenerated()
         {
-
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
             bool equals = _wait.Until(drv => shoppingCartPO.IsPagetDisplayed());
+
+           string ok = _scenarioContext.ScenarioExecutionStatus.ToString();
+            if (ok.Equals("Ok", StringComparison.OrdinalIgnoreCase))
+            {
+                screenshots.ToImage();
+            }
+
             Assert.IsTrue(equals);
         }
     }
