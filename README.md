@@ -20,7 +20,7 @@
 |    9    | Validate the total purchase amount.                                                      |   ✔    |
 |   10    | Select a payment method and proceed.                                                     |   ✔    |
 |   11    | Confirm the purchase and validate that it was successfully completed.                    |   ✔    |
-|   11    | Evidence of successful testing                                                           |   ⚠    |
+|   11    | Evidence of successful testing                                                           |   ✔    |
 
 
 ### LivingDoc
