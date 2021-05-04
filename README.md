@@ -3,7 +3,9 @@
 ## Test - Make a successful purchase
 
 
-## [Automation Practice](http://automationpractice.com/index.php?)
+## [Automation Practice - Tests evidences](https://gracetorresleite.github.io/SpecFlow_Selenium_MsTest_ShoppingCart/LivingDoc/LivingDoc.html)
+
+
 
 | Step    | Objective                                                                               | Result  |
 | ------- | -------------------------------------------------------------------------------------   | --------|
